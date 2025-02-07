@@ -1,0 +1,1 @@
+# global_average_internet_usage
