@@ -1,6 +1,8 @@
 # Table of Contents
 
 - [Introduction](#introduction)
+- [💾 Data](#-data)
+  - [Interet Usage (`internet_usage.csv`)](#interet-usage-internet_usagecsv)
 - [Executive Summary](#executive-summary)
 - [Global Trends: Key Observations](#global-trends-key-observations)
   - [Correlations with Education and Electricity](#correlations-with-education-and-electricity)
@@ -47,6 +49,22 @@
 
 # Introduction  
 "The internet is becoming the town square for the global village of tomorrow." — Bill Gates. In the year 2000, only **8.8%** of the world population had access to the internet. By 2023, that figure skyrocketed to **87.7%**." This transformation is nothing short of revolutionary. The internet, once a luxury for a select few, has now become a global necessity, driving economies, shaping cultures, and influencing how we live, learn, and work. Yet, these numbers don’t tell the full story. Beneath the surface, disparities in access, economic influence, and education systems paint a much more complex picture of global internet usage. In this report, we will look into global internet adoption, examining correlations with key economic and infrastructural indicators, while breaking down usage trends by continent over the last two decades.  
+
+## 💾 Data
+
+#### You have access to the following file, but you can supplement your data with other sources to enrich your analysis. 
+
+### Interet Usage (`internet_usage.csv`)
+|   Column name  |   Description | 
+|---------------|-----------|
+| Country Name | Name of the country |
+| Country Code | Countries 3 character country code|
+| 2000 | Contains the % of population of individuals using the internet in 2000  |
+| 2001 | Contains the % of population of individuals using the internet in 2001  |
+| 2002 | Contains the % of population of individuals using the internet in 2002  |
+| 2003 | Contains the % of population of individuals using the internet in 2003  |
+| .... | ...  |
+| 2023 | Contains the % of population of individuals using the internet in 2023  |
 
 # Executive Summary  
 Internet usage has experienced a remarkable surge in the past two decades. From a modest less than 9% in 2000, internet access has catapulted to 87.7% in 2023, a tenfold increase that has revolutionized industries and changed lives across the globe. But behind these impressive figures lies a more nuanced narrative. The relationship between internet usage and economic indicators like the labor force, school enrollment, and access to electricity varies significantly between developed, developing, and underdeveloped countries.
