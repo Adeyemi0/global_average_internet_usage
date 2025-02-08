@@ -52,7 +52,7 @@
 
 ## 💾 Data
 
-#### You have access to the following file, but you can supplement your data with other sources to enrich your analysis. 
+#### You can supplement your data with other sources to enrich your analysis. 
 
 ### Interet Usage (`internet_usage.csv`)
 |   Column name  |   Description | 
