@@ -50,31 +50,18 @@
 # Introduction  
 "The internet is becoming the town square for the global village of tomorrow." — Bill Gates. In the year 2000, only **8.8%** of the world population had access to the internet. By 2023, that figure skyrocketed to **87.7%**." This transformation is nothing short of revolutionary. The internet, once a luxury for a select few, has now become a global necessity, driving economies, shaping cultures, and influencing how we live, learn, and work. Yet, these numbers don’t tell the full story. Beneath the surface, disparities in access, economic influence, and education systems paint a much more complex picture of global internet usage. In this report, we will look into global internet adoption, examining correlations with key economic and infrastructural indicators, while breaking down usage trends by continent over the last two decades.  
 
-## 💾 Data
-
-#### You can supplement your data with other sources to enrich your analysis. 
-
-### Interet Usage (`internet_usage.csv`)
-|   Column name  |   Description | 
-|---------------|-----------|
-| Country Name | Name of the country |
-| Country Code | Countries 3 character country code|
-| 2000 | Contains the % of population of individuals using the internet in 2000  |
-| 2001 | Contains the % of population of individuals using the internet in 2001  |
-| 2002 | Contains the % of population of individuals using the internet in 2002  |
-| 2003 | Contains the % of population of individuals using the internet in 2003  |
-| .... | ...  |
-| 2023 | Contains the % of population of individuals using the internet in 2023  |
-
 # Executive Summary  
-Internet usage has experienced a remarkable surge in the past two decades. From a modest less than 9% in 2000, internet access has catapulted to 87.7% in 2023, a tenfold increase that has revolutionized industries and changed lives across the globe. But behind these impressive figures lies a more nuanced narrative. The relationship between internet usage and economic indicators like the labor force, school enrollment, and access to electricity varies significantly between developed, developing, and underdeveloped countries.
+Internet usage has experienced a remarkable surge in the past two decades. From a modest 8.7% in 2000, internet access has catapulted to 87.6% in 2023, a tenfold increase that has revolutionized industries and changed lives across the globe. But behind these impressive figures lies a more nuanced narrative. The relationship between internet usage and economic indicators like the labor force, school enrollment, and access to electricity varies significantly between developed, developing, and underdeveloped countries.
 
 ## Global Trends: Key Observations
 
 - **Correlations with Education and Electricity:** On a global scale, internet usage has a strong positive correlation (0.696) with school enrollment at the tertiary level. This finding highlights that countries with higher education rates tend to have greater internet penetration. Similarly, access to electricity also shows a notable positive correlation (0.606), which is a fundamental enabler of connectivity. However, ease of doing business has a negative relationship (-0.724), suggesting that even in countries where business environments are favorable, internet usage may not necessarily follow without proper infrastructure and education.
 
+*Showing Global Correlation Matrix Socioeconomic Factors (2000–2023)*
+![Global Correlation Matrix Socioeconomic Factors](correlation_matrix_socioeconomic_factors.png)
+
 - **Developed Countries Lead, But Face Stagnation:** Developed nations show a well-established connection between internet usage and tertiary school enrollment (0.422) and access to electricity (0.325). These regions also see a sharp contrast with the ease of doing business (-0.586), indicating that even in technologically advanced economies, other factors, like the cost of living or digital access, might be stifling further growth. Most developed countries have plateaued, where internet access is no longer the primary growth challenge but rather deeper digital inclusivity and sustainable infrastructure.
- 
+
 *Showing Developed Countries Correlation Matrix Socioeconomic Factors (2000–2023)*
 ![Developed Countries Correlation Matrix Socioeconomic Factors](correlation_matrix_developed_countries.png)
 
@@ -85,10 +72,8 @@ Internet usage has experienced a remarkable surge in the past two decades. From 
 
 - **Underdeveloped Countries: Challenges in Connectivity:** In underdeveloped nations, access to electricity (0.591) remains the strongest enabler of internet growth, whereas school enrollment also shows a positive relationship (0.427). However, labor force participation and ease of doing business show weaker, often negative, correlations. These countries are held back by a lack of foundational infrastructure, highlighting a dire need for investment in both education and electricity to bridge the digital divide.
 
-*Showing Underdeveloped Countries Correlation Matrix Socioeconomic Factors (2000–2023)*
+  *Showing Underdeveloped Countries Correlation Matrix Socioeconomic Factors (2000–2023)*
 ![Underdeveloped Countries Correlation Matrix Socioeconomic Factors](correlation_matrix_underdeveloped_countries.png)
-
-A Welch's T-Test was conducted to compare the mean internet usage between developed and developing countries. The results revealed a statistically significant difference (t=33.8665, p<0.0001). The effect size, measured by Cohen's d, was 1.0930, indicating a very large difference in internet usage between the two groups. Additionally, the 95% confidence interval for the difference in means was [26.7132,29.9962], confirming the robustness of the observed difference.
 
 
 
@@ -114,6 +99,28 @@ Additional socio-economic indicators were fetched using the `wbgapi` Python pack
 
 
 Countries were categorized into three development statuses: **Developed**, **Developing**, and **Underdeveloped**. Furthermore, countries were grouped by continent for regional analysis, allowing for more nuanced exploration of internet usage trends within specific socio-economic contexts.
+
+
+### Pearson Correlation
+
+A Pearson correlation was conducted to assess the relationship between internet usage and the socio-economic variables. The Pearson correlation coefficient (r) measures the strength and direction of the linear relationship between two variables. The formula for the Pearson correlation is as follows:
+
+$$
+r = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum (X_i - \bar{X})^2 \sum (Y_i - \bar{Y})^2}}
+$$
+
+Where:
+- \( X \) represents the values of one variable (e.g., Internet Usage).
+- \( Y \) represents the values of the other variable (e.g., Access to Electricity).
+- \( \bar{X} \) and \( \bar{Y} \) are the means of \( X \) and \( Y \).
+
+The Pearson correlation coefficient values range between **-1 and 1**, where:
+- **1** indicates a **perfect positive relationship**: As one variable increases, the other variable increases proportionally.
+- **-1** indicates a **perfect negative relationship**: As one variable increases, the other variable decreases proportionally.
+- **0** indicates **no linear relationship** between the two variables.
+
+The closer the coefficient is to **1** or **-1**, the stronger the relationship between the two variables. A positive value indicates that the variables tend to increase together, while a negative value indicates that as one variable increases, the other tends to decrease.
+
 
 ### Handling Missing Values
 Given the percentage of missing values in your dataset, it's clear that some variables have a significant amount of missing data. Below is a detailed plan for handling these missing values based on their extent and importance:
@@ -167,45 +174,8 @@ Below is the plan for handling missing data in the dataset, based on the percent
 - Since only a small amount of data is missing, I chose to drop the rows with missing values for this variable. This should not significantly impact the overall analysis.
 
 
-### Pearson Correlation
-
-A Pearson correlation was conducted to assess the relationship between internet usage and the socio-economic variables. The Pearson correlation coefficient (r) measures the strength and direction of the linear relationship between two variables. The results indicate:  
-
-- Strong positive correlations exist between internet usage and tertiary school enrollment (r = 0.576, p < 0.0001) and access to electricity (r = 0.590, p < 0.0001).  
-- Weak or insignificant correlations were observed for labor force total (r = -0.009, p = 0.531) and gross domestic income (r = -0.007, p = 0.626), suggesting these factors have minimal impact on internet penetration.
-
-*Table Showing Pearson correlation Table*
-
-| Column                      | Pearson Correlation | P-Value  | Significant |
-|-----------------------------|---------------------|----------|-------------|
-| Labor_Force_Total            | -0.008970           | 0.531253 | No          |
-| School_Enrollment_Tertiary   | 0.576296            | 0.000000 | Yes         |
-| Gross_Domestic_Income        | -0.006989           | 0.625684 | No          |
-| Internet Usage               | 1.000000            | 0.000000 | Yes         |
-| Access_to_Electricity        | 0.589702            | 0.000000 | Yes         |
-
-
-The formula for the Pearson correlation is as follows:
-
-$$
-r = \frac{\sum (X_i - \bar{X})(Y_i - \bar{Y})}{\sqrt{\sum (X_i - \bar{X})^2 \sum (Y_i - \bar{Y})^2}}
-$$
-
-Where:
-- \( X \) represents the values of one variable (e.g., Internet Usage).
-- \( Y \) represents the values of the other variable (e.g., Access to Electricity).
-- \( \bar{X} \) and \( \bar{Y} \) are the means of \( X \) and \( Y \).
-
-The Pearson correlation coefficient values range between **-1 and 1**, where:
-- **1** indicates a **perfect positive relationship**: As one variable increases, the other variable increases proportionally.
-- **-1** indicates a **perfect negative relationship**: As one variable increases, the other variable decreases proportionally.
-- **0** indicates **no linear relationship** between the two variables.
-
-The closer the coefficient is to **1** or **-1**, the stronger the relationship between the two variables. A positive value indicates that the variables tend to increase together, while a negative value indicates that as one variable increases, the other tends to decrease.
-
-
 ### Statistical Analysis: Welch's T-Test, Cohen's d, and 95% Confidence Interval
-A Welch's T-Test was used to compare average internet usage in developed and developing nations. The results showed a statistically significant difference (t=33.8665, p<0.0001). The effect size, as calculated by Cohen's d, was 1.0930, showing a significant difference in internet usage across the groups. Furthermore, the 95% confidence interval for the difference in means was [26.7132,29.9962], indicating the strength of the observed difference.
+A Welch's T-Test was conducted to compare the mean internet usage between developed and developing countries. The results revealed a statistically significant difference (t=33.8665, p<0.0001). The effect size, measured by Cohen's d, was 1.0930, indicating a very large difference in internet usage between the two groups. Additionally, the 95% confidence interval for the difference in means was [26.7132,29.9962], confirming the robustness of the observed difference.
 
 #### 1. Welch's T-Test
 Welch's T-Test, also known as the **unequal variances t-test**, is a statistical test used to compare the means of two independent groups when the assumption of equal variances (homoscedasticity) is violated. Unlike the standard Student's T-Test, Welch's T-Test does not assume that the variances of the two groups are equal, making it more robust in such cases.
@@ -316,7 +286,7 @@ While developed countries have reached a saturation point, largely stabilizing t
 
 This exponential growth, however, hides an important story, the growing **digital divide** between regions.
 
-*Figure 2: Showing Internet Usage (2000–2023)*
+*Figure 2.0: Showing Internet Usage (2000–2023)*
 ![Global Average Internet Usage](global_average_internet_usage.png)
 
 ## Regional Disparities: Who's Left Behind?  
@@ -327,30 +297,48 @@ In 2000, Africa’s internet penetration was a minuscule 0.8%. Fast forward to 2
 
 But here’s where it gets interesting. Mobile internet has been a game-changer. Many African countries have bypassed the need for traditional fixed-line connections and jumped straight to mobile. This leapfrogging has boosted connectivity, but affordability remains a huge challenge. If we can reduce the cost of mobile data and improve basic infrastructure like power grids, Africa’s growth could be explosive. It’s not just about catching up; it’s about unlocking potential.
 
-*Figure 3.0: Showing Global Correlation Matrix Socioeconomic Factors (2000–2023)*
-![Global Correlation Matrix Socioeconomic Factors](correlation_matrix_socioeconomic_factors.png)
+*Figure 2.1: Showing Correlation Matrix Africa*
+![Correlation Matrix Africa](correlation_matrix_africa.png)
 
 ### Asia: A Tale of Two Extremes
 Asia’s internet penetration tells a different story. In 2000, 6.8% of the population was online; by 2023, that number had soared to 88%. But these figures mask significant disparities within the continent. Japan and South Korea are miles ahead, with nearly universal access. Meanwhile, countries like India and Bangladesh are still playing catch-up.
 
-The key to Asia’s rapid growth? Education. The correlation between tertiary school enrollment and internet usage is one of the highest (0.6965). More educated populations are more connected. Yet, rural areas in countries like Indonesia and India still face significant barriers. The next big push in Asia will be to close these gaps, ensuring that rural communities have the same opportunities as their urban counterparts.
+The key to Asia’s rapid growth? Education. The correlation between tertiary school enrollment and internet usage is one of the highest (0.6439). More educated populations are more connected. Yet, rural areas in countries like Indonesia and India still face significant barriers. The next big push in Asia will be to close these gaps, ensuring that rural communities have the same opportunities as their urban counterparts.
+
+*Figure 2.2: Showing Correlation Matrix Asia*
+![Correlation Matrix Asia](correlation_matrix_asia.png)
+
+*Figure 2.3: Showing Internet Usage Trend in Japan, South Korea, India and Bangladesh*
+![Internet Usage Trend in Japan, South Korea, India and Bangladesh](internet_usage_trend_selected_countries.png)
+
 
 ### Europe: Connected but Complex
-Europe boasts the highest internet penetration rates globally 90.5% in 2023, up from 20.1% in 2000. The growth has been steady, driven by strong infrastructure and supportive governmental policies. Surprisingly, however, there’s a negative correlation between ease of doing business and internet usage in Europe (-0.7241). Why? Highly connected societies aren’t necessarily better environments for business. Instead, Europe’s digital success seems to be more about its infrastructure and political will than its business climate.
+Europe boasts the highest internet penetration rates globally 90.5% in 2023, up from 20.1% in 2000. The growth has been steady, driven by strong infrastructure and supportive governmental policies. Surprisingly, however, there’s a negative correlation between ease of doing business and internet usage in Europe (-0.605751). Why? Highly connected societies aren’t necessarily better environments for business. Instead, Europe’s digital success seems to be more about its infrastructure and political will than its business climate.
 
 In the coming years, the challenge for Europe won’t be about getting more people online. It will be about refining the experience—faster speeds, better affordability, and expanding digital literacy.
 
+*Figure 2.4: Showing Correlation Matrix Europe*
+![Correlation Matrix Europe](correlation_matrix_Europe.png)
+
 ### North America: Reaching Saturation
-In 2023, 87.6% of North America’s population had internet access. Compare that to 10.6% in 2000, and you’ll see how quickly things changed. But as impressive as that growth is, North America’s market is now nearing saturation. Growth has slowed considerably since 2010.
+In 2023, 87.6% of North America’s population had internet access. Compare that to 10.6% in 2000, and you’ll see how quickly things changed. But as impressive as that growth is, North America’s market is now nearing saturation. 
 
 What’s next for this region? It’s not about expanding access but about improving it. Faster speeds, more affordable pricing, and enhanced digital experiences will be the primary focus in the next decade.
+
+*Figure 2.5: Showing Correlation Matrix North America*
+![Correlation Matrix North America](correlation_matrix_north_america.png)
 
 ### South America & Oceania: Still Room to Grow
 South America’s internet penetration grew from 14.55% in 2000 to 78.23% in 2020, while Oceania reached 68.75% in 2022. While both regions have made significant strides, they’re still far from the global leaders. The digital divide is most evident in remote and underserved areas, where infrastructure struggles to keep up. Bridging these gaps will be key to further growth.
 
+*Figure 2.6: Showing Correlation Matrix South America*
+![Correlation Matrix South America](correlation_matrix_south_america.png)
 
-*Figure 3.1 : Showing Internet Usage by Continent (2000–2023)*
+
+*Figure 2.7: Showing Internet Usage by Continent (2000–2023)*
 ![Internet Usage By Continent](internet_usage_by_continent.png)
+
+
 
 
 ## Development Status: The Global Digital Divide  
@@ -365,7 +353,7 @@ Cohen's d tells us the magnitude of this difference. An effect size of 1.0930 in
 
 The 95% confidence interval [26.7132, 29.9962] reinforces the reliability of our findings. There’s no doubt: the divide exists, and it matters.
 
-*Figure 4: Internet Usage by Development Status (2000–2023)*
+*Figure 3.0: Internet Usage by Development Status (2000–2023)*
 ![Internet Usage By Development Status](internet_usage_by_development_status.png)
 
 
@@ -392,10 +380,10 @@ Will it be easy? Absolutely not. Will it be worth it? Without question. Together
 # Recommendations
 
 1. **Prioritize Infrastructure Investment in Africa**  
-   Africa’s internet penetration remains significantly lower than the global average, mainly due to inadequate infrastructure. Countries in Africa should prioritize improving electricity access and internet infrastructure, especially in rural areas. Expanding electricity grids can directly improve internet usage, as the correlation between electricity access and internet penetration is strong (0.605). Investing in mobile infrastructure could further accelerate internet access in underserved regions, where mobile technology has proven to be a game-changer.
+   Africa’s internet penetration remains significantly lower than the global average, mainly due to inadequate infrastructure. Countries in Africa should prioritize improving electricity access and internet infrastructure, especially in rural areas. Expanding electricity grids can directly improve internet usage, as the correlation between electricity access and internet penetration is strong (0.6058). Investing in mobile infrastructure could further accelerate internet access in underserved regions, where mobile technology has proven to be a game-changer.
 
 2. **Focus on Education to Drive Growth in Asia**  
-   Asia’s strong correlation between tertiary school enrollment and internet usage (0.6965) suggests that education plays a pivotal role in driving digital adoption. Governments and organizations should continue investing in education to ensure the younger population is equipped with the skills to fully participate in the digital economy. Additionally, efforts should be made to address digital disparities between rural and urban areas, ensuring that internet growth is more evenly distributed.
+   Asia’s strong correlation between tertiary school enrollment and internet usage (0.6439) suggests that education plays a pivotal role in driving digital adoption. Governments and organizations should continue investing in education to ensure the younger population is equipped with the skills to fully participate in the digital economy. Additionally, efforts should be made to address digital disparities between rural and urban areas, ensuring that internet growth is more evenly distributed.
 
 3. **Leverage Europe’s High Penetration for Digital Innovation**  
    Europe has the highest internet penetration rates, and countries here can capitalize on this strong digital foundation to drive innovation. The focus should shift towards enhancing internet speeds, supporting digital entrepreneurship, and ensuring inclusive access to high-speed internet in remote areas. By addressing digital exclusion in underdeveloped regions, Europe can maintain its leadership in digital transformation.
@@ -414,3 +402,4 @@ Will it be easy? Absolutely not. Will it be worth it? Without question. Together
 
 8. **Encourage Digital Inclusion Policies in Developing Regions**  
    In developing countries, internet growth correlates strongly with access to electricity and school enrollment. Governments should adopt digital inclusion policies that not only improve infrastructure but also prioritize education and skills training. Public-private partnerships in infrastructure, particularly in rural areas, will be key in ensuring that the benefits of digital growth reach the entire population.
+
