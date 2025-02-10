@@ -295,7 +295,7 @@ This exponential growth, however, hides an important story, the growing **digita
 Global internet access isn't uniform, and the disparity is most apparent when we look at specific regions. Let’s break it down:
 
 ### Africa: Still Struggling to Connect
-In 2000, Africa’s internet penetration was a minuscule 0.8%. Fast forward to 2023, and it’s risen to 45.2%. Impressive? Yes. But when you compare it to the rest of the world, it’s clear that Africa remains far behind. Why? Infrastructure or the lack of it. The correlation between access to electricity and internet usage in Africa is striking (0.6058). No electricity, no internet. It’s that simple.
+In 2000, Africa’s internet penetration was a minuscule 0.8%. Fast forward to 2023, and it’s risen to 45.2%. Impressive? Yes. But when you compare it to the rest of the world, it’s clear that Africa remains far behind. Why? Infrastructure or the lack of it. The correlation between access to electricity and internet usage in Africa is striking (0.68). No electricity, no internet. It’s that simple.
 
 But here’s where it gets interesting. Mobile internet has been a game-changer. Many African countries have bypassed the need for traditional fixed-line connections and jumped straight to mobile. This leapfrogging has boosted connectivity, but affordability remains a huge challenge. If we can reduce the cost of mobile data and improve basic infrastructure like power grids, Africa’s growth could be explosive. It’s not just about catching up; it’s about unlocking potential.
 
@@ -320,7 +320,7 @@ Europe boasts the highest internet penetration rates globally 90.5% in 2023, up 
 In the coming years, the challenge for Europe won’t be about getting more people online. It will be about refining the experience—faster speeds, better affordability, and expanding digital literacy.
 
 *Figure 2.4: Showing Correlation Matrix Europe*
-![Correlation Matrix Europe](correlation_matrix_Europe.png)
+![Correlation Matrix Europe](correlation_matrix_europe.png)
 
 ### North America: Reaching Saturation
 In 2023, 87.6% of North America’s population had internet access. Compare that to 10.6% in 2000, and you’ll see how quickly things changed. But as impressive as that growth is, North America’s market is now nearing saturation. 
