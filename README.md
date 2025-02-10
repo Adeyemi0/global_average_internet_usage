@@ -75,6 +75,8 @@ Internet usage has experienced a remarkable surge in the past two decades. From 
   *Showing Underdeveloped Countries Correlation Matrix Socioeconomic Factors (2000–2023)*
 ![Underdeveloped Countries Correlation Matrix Socioeconomic Factors](correlation_matrix_underdeveloped_countries.png)
 
+A Welch's T-Test was conducted to compare the mean internet usage between developed and developing countries. The results revealed a statistically significant difference (t=33.8665, p<0.0001). The effect size, measured by Cohen's d, was 1.0930, indicating a very large difference in internet usage between the two groups. Additionally, the 95% confidence interval for the difference in means was [26.7132,29.9962], confirming the robustness of the observed difference.
+
 
 
 # Methodology
@@ -175,7 +177,7 @@ Below is the plan for handling missing data in the dataset, based on the percent
 
 
 ### Statistical Analysis: Welch's T-Test, Cohen's d, and 95% Confidence Interval
-A Welch's T-Test was conducted to compare the mean internet usage between developed and developing countries. The results revealed a statistically significant difference (t=33.8665, p<0.0001). The effect size, measured by Cohen's d, was 1.0930, indicating a very large difference in internet usage between the two groups. Additionally, the 95% confidence interval for the difference in means was [26.7132,29.9962], confirming the robustness of the observed difference.
+A Welch's t-test comparing the mean internet usage between developed and developing countries yielded a statistically significant difference (t = 33.87, p < 0.0001). The effect size was very large (Cohen's d = 1.09), and the 95% confidence interval for the mean difference ([26.71, 29.99]) reinforces the robustness of this finding.
 
 #### 1. Welch's T-Test
 Welch's T-Test, also known as the **unequal variances t-test**, is a statistical test used to compare the means of two independent groups when the assumption of equal variances (homoscedasticity) is violated. Unlike the standard Student's T-Test, Welch's T-Test does not assume that the variances of the two groups are equal, making it more robust in such cases.
@@ -402,4 +404,3 @@ Will it be easy? Absolutely not. Will it be worth it? Without question. Together
 
 8. **Encourage Digital Inclusion Policies in Developing Regions**  
    In developing countries, internet growth correlates strongly with access to electricity and school enrollment. Governments should adopt digital inclusion policies that not only improve infrastructure but also prioritize education and skills training. Public-private partnerships in infrastructure, particularly in rural areas, will be key in ensuring that the benefits of digital growth reach the entire population.
-
