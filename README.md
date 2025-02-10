@@ -360,7 +360,7 @@ The 95% confidence interval [26.7132, 29.9962] reinforces the reliability of our
 
 
 ### Year-over-Year Growth: Who’s Leading the Charge?
-Developed countries consistently added users at a steady pace ([Figure 4](#figure-4-internet-usage-by-development-status-20002023)), never dipping below a 3% annual growth rate. This stability stems from robust infrastructure, supportive policies, and widespread awareness of the internet’s benefits.
+Developed countries consistently added users at a steady pace, never dipping below a 3% annual growth rate. This stability stems from robust infrastructure, supportive policies, and widespread awareness of the internet’s benefits.
 
 Developing countries also showed promise, especially after 2010. Their growth accelerated significantly, driven by mobile technologies and affordable devices. However, challenges like poor infrastructure, limited education, and affordability issues remain barriers.
 
